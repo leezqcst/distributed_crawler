@@ -1,0 +1,34 @@
+# Scrapy settings for example project
+#
+# For simplicity, this file contains only the most important settings by
+# default. All the other settings are documented here:
+#
+#     http://doc.scrapy.org/topics/settings.html
+#
+SPIDER_MODULES = ['example.spiders']
+NEWSPIDER_MODULE = 'example.spiders'
+
+USER_AGENT = 'scrapy-redis (+https://github.com/rolando/scrapy-redis)'
+
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_PERSIST = True
+
+
+ITEM_PIPELINES = {
+    'example.pipelines.ExamplePipeline': 300,
+    'scrapy_redis.pipelines.RedisPipeline': 400,
+}
+
+LOG_LEVEL = 'DEBUG'
+
+
+#REDIS_HOST = 'localhost'
+#REDIS_PORT = 6379
+#REDIS_URL = 'redis://106.75.136.128:6379'
+
+
+# Introduce an artifical delay to make use of parallelism. to speed up the
+# crawl.
+DOWNLOAD_DELAY = 1
+REDIS_URL = 'redis://106.75.136.128:6379'
