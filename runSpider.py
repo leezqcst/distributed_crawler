@@ -21,7 +21,7 @@ def generateStartUrls(host, input):
 
 def changeSettings(host):
     path = os.getcwd()
-    os.chdir(path + '/example-project/example')
+    os.chdir(path + '/distributed_crawler/example-project/example/')
     f = open('settings.py', 'r')
     lines = f.readlines()
     if not lines[-1].startswith("REDIS_URL = "):
