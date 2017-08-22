@@ -31,4 +31,4 @@ LOG_LEVEL = 'DEBUG'
 # Introduce an artifical delay to make use of parallelism. to speed up the
 # crawl.
 DOWNLOAD_DELAY = 1
-REDIS_URL = 'redis://106.75.136.128:6379'
+REDIS_URL = 'redis://localhost:6379'

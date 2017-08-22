@@ -21,7 +21,7 @@ def generateStartUrls(host, input):
 
 def changeSettings(host):
     path = os.getcwd()
-    os.chdir(path + '/distributed_crawler/example-project/example/')
+    os.chdir(path + '/example-project/example/')
     f = open('settings.py', 'r')
     lines = f.readlines()
     if not lines[-1].startswith("REDIS_URL = "):
@@ -37,7 +37,7 @@ def runSpider(host):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-host', action='store', dest='host', default='106.75.136.128',
+    parser.add_argument('-host', action='store', dest='host', default='localhost',
                         help='The host address for Redis, default is 106.75.136.128')
     parser.add_argument('-input', action='store', dest='input',
                         help='The file listing items you want to crawl')
